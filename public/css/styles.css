@@ -1075,7 +1075,7 @@ this the same font stack that Normalize.css sets for the `body`.
 .pure-g [class*="pure-u"] {
   font-family: sans-serif; }
 
-.pure-u-1, .pure-u-1-1, .pure-u-1-2, .pure-u-1-3, .pure-u-2-3, .pure-u-1-4, .pure-u-3-4, .pure-u-1-5, .pure-u-2-5, .pure-u-3-5, .pure-u-4-5, .pure-u-5-5, .pure-u-1-6, .pure-u-5-6, .pure-u-1-8, .pure-u-3-8, .pure-u-5-8, .pure-u-7-8, .pure-u-1-12, .pure-u-5-12, .pure-u-7-12, .pure-u-11-12, .pure-u-1-24, .pure-u-2-24, .pure-u-3-24, .pure-u-4-24, .pure-u-5-24, .pure-u-6-24, .pure-u-7-24, .pure-u-8-24, .pure-u-9-24, .pure-u-10-24, .pure-u-11-24, .pure-u-12-24, .pure-u-13-24, .pure-u-14-24, .pure-u-15-24, .pure-u-16-24, .pure-u-17-24, .pure-u-18-24, .pure-u-19-24, .pure-u-20-24, .pure-u-21-24, .pure-u-22-24, .pure-u-23-24, .pure-u-24-24 {
+.pure-u-1, .pure-u-1-1, .pure-u-1-2, .pure-u-1-3, .blog-tile, .pure-u-2-3, .pure-u-1-4, .pure-u-3-4, .pure-u-1-5, .pure-u-2-5, .pure-u-3-5, .pure-u-4-5, .pure-u-5-5, .pure-u-1-6, .pure-u-5-6, .pure-u-1-8, .pure-u-3-8, .pure-u-5-8, .pure-u-7-8, .pure-u-1-12, .pure-u-5-12, .pure-u-7-12, .pure-u-11-12, .pure-u-1-24, .pure-u-2-24, .pure-u-3-24, .pure-u-4-24, .pure-u-5-24, .pure-u-6-24, .pure-u-7-24, .pure-u-8-24, .pure-u-9-24, .pure-u-10-24, .pure-u-11-24, .pure-u-12-24, .pure-u-13-24, .pure-u-14-24, .pure-u-15-24, .pure-u-16-24, .pure-u-17-24, .pure-u-18-24, .pure-u-19-24, .pure-u-20-24, .pure-u-21-24, .pure-u-22-24, .pure-u-23-24, .pure-u-24-24 {
   display: inline-block;
   *display: inline;
   zoom: 1;
@@ -1116,7 +1116,7 @@ this the same font stack that Normalize.css sets for the `body`.
   width: 29.1667%;
   *width: 29.1357%; }
 
-.pure-u-1-3, .pure-u-8-24 {
+.pure-u-1-3, .blog-tile, .pure-u-8-24 {
   width: 33.3333%;
   *width: 33.3023%; }
 
@@ -1774,5 +1774,47 @@ striping:
 
 .pure-table-horizontal tbody > tr:last-child > td {
   border-bottom-width: 0; }
+
+.splash {
+  height: 100VH;
+  width: 100%; }
+
+header {
+  background: white;
+  border-bottom: 1px solid #e6e6e6;
+  height: 74px;
+  width: 100%; }
+  header.bottom {
+    bottom: 0px;
+    position: absolute; }
+  header.sticky {
+    bottom: initial;
+    position: fixed;
+    top: 0; }
+  header .logo {
+    padding: 10px;
+    display: inline-block; }
+  header .menu {
+    padding: 10px;
+    float: right;
+    list-style: none; }
+    header .menu__item {
+      color: black;
+      padding: 0px 10px;
+      display: inline-block; }
+      header .menu__item a {
+        color: inherit;
+        text-decoration: none; }
+
+.section {
+  text-align: center; }
+  .section .content {
+    padding: 20px; }
+    .section .content p {
+      margin: auto;
+      max-width: 700px; }
+  .section .inset {
+    color: white;
+    background: #262a36; }
 
 /*# sourceMappingURL=styles.css.map */

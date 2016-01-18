@@ -1,0 +1,92 @@
+
+.splash {
+	height: 100VH;
+	width: 100%;
+}
+
+.full-bleed-background {
+
+}
+
+
+header {
+	background: $navigation-color;
+	border-bottom: 1px solid $border-color;
+	height: 74px;
+	width: 100%;
+
+	&.bottom {
+		bottom: 0px;
+		position: absolute;
+	}
+
+	&.sticky {
+		bottom: initial;
+		position: fixed;
+		top: 0;
+	}
+
+	.logo {
+		padding: 10px;
+		display: inline-block;
+	}
+
+	.menu {
+		padding: 10px;
+		float: right;
+		list-style: none;
+
+		&__item {
+			color: $text-color;
+			padding: 0px 10px;
+			display: inline-block;
+
+			a {
+				color: inherit;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.section {
+	text-align: center;
+
+	.content {
+		padding: 20px;
+
+		p {
+			margin: auto;
+			max-width: 700px;
+		}
+	}
+
+	.inset {
+		color: $inverted-text-color;
+		background: $inset-color;
+	}
+}
+
+.blog-tile {
+	@extend .pure-u-1-3;
+
+	img {
+
+	}
+
+	.title {
+
+	}
+
+	.date-published {
+
+	}
+
+	.excerpt {
+
+	}
+}
+
+.blog-post {
+	
+}

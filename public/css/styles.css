@@ -1789,10 +1789,10 @@ html, body, a, p {
   font-family: 'PT Serif', serif; }
 
 .splash {
-  height: 100VH;
-  width: 100%;
   background: #001E27;
-  color: #b0c4c6; }
+  color: #b0c4c6;
+  height: 100VH;
+  overflow: hidden; }
 
 header {
   background: white;
@@ -1833,12 +1833,10 @@ header {
     background: #262a36;
     color: white; }
 
-.splash {
-  padding: 20px; }
-
 .typed-container {
   opacity: 0;
-  margin-bottom: 1em; }
+  padding: 20px;
+  padding-bottom: 0px; }
 
 .response-text {
   display: none; }

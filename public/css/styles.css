@@ -1792,7 +1792,7 @@ html, body, a, p {
   background: #001E27;
   color: #b0c4c6;
   height: 100VH;
-  overflow: hidden; }
+  overflow: auto; }
 
 header {
   background: white;
@@ -1833,10 +1833,21 @@ header {
     background: #262a36;
     color: white; }
 
+.typed-wrapper {
+  padding-bottom: 100px; }
+
 .typed-container {
   opacity: 0;
   padding: 20px;
   padding-bottom: 0px; }
+
+@media screen and (max-width: 64em) {
+  .typed-container {
+    font-size: .85em; } }
+
+@media screen and (max-width: 48em) {
+  .typed-container {
+    font-size: .7em; } }
 
 .response-text {
   display: none; }

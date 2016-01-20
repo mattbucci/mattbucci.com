@@ -33,6 +33,10 @@ function type_text(text_container, index, callback) {
             $response_container.html("<i class=\"fa fa-circle-o-notch fa-spin\"></i>");
             setTimeout(function() {
                 $response_container.html(response_text);
+                // scroll to bottom on load
+                $(".splash").scrollTop(
+                    $(".splash").prop("scrollHeight")
+                );
                 callback();
             }, 2000);
         }

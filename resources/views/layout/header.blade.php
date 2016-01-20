@@ -1,4 +1,4 @@
-<header>
+<header class="bottom">
     <div class="logo">
         <img src="http://placehold.it/250x50">
     </div>

@@ -2,6 +2,8 @@
 .splash {
 	height: 100VH;
 	width: 100%;
+	background: #001E27;
+	color: #b0c4c6;
 }
 
 .full-bleed-background {
@@ -90,4 +92,8 @@ header {
 
 .blog-post {
 
+}
+
+.project-tile {
+	@extend .pure-u-1-5;
 }

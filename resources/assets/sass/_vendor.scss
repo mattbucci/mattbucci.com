@@ -1,0 +1,64 @@
+.splash {
+	padding: 20px;
+}
+
+.typed-container {
+	opacity: 0;
+	margin-bottom: 1em;
+}
+
+.response-text {
+	display: none;
+}
+
+.typed-text, .console-text, .response-text {
+	font-family: 'Inconsolata', sans-serif;
+
+	.name {
+		color: rgb(115, 229, 226);
+	}
+
+	.host {
+		color: rgb(216, 227, 118);
+	}
+
+	.location {
+
+	}
+
+	.repo {
+		color: rgb(115, 229, 226);
+	}
+
+	.time {
+		color: rgb(216, 227, 118);
+	}
+}
+
+
+
+.typed-text {
+	margin-left: .2em;
+}
+
+.typed-cursor{
+	opacity: 1;
+	-webkit-animation: blink 0.7s infinite;
+	-moz-animation: blink 0.7s infinite;
+	animation: blink 0.7s infinite;
+}
+@keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}
+@-moz-keyframes blink{
+	0% { opacity:1; }
+	50% { opacity:0; }
+	100% { opacity:1; }
+}

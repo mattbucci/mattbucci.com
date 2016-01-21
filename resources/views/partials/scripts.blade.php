@@ -1,6 +1,6 @@
 <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="/js/vendor.js"></script>
-<script src="/js/main.js"></script>
+<script src="/assets/js/vendor.js"></script>
+<script src="/assets/js/main.js"></script>
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 <script>
     (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

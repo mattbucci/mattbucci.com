@@ -1780,6 +1780,7 @@ html, body {
   text-rendering: optimizeLegibility; }
 
 body {
+  background-color: #001E27;
   font-size: 1.5em; }
 
 h1, h2, h3, h4, h5 {
@@ -1794,11 +1795,21 @@ html, body, a, p {
   height: 100VH;
   overflow: auto; }
 
+.splash::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5); }
+
+.splash::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px; }
+
+.splash::-webkit-scrollbar {
+  width: 12px; }
+
 header {
-  background: white;
-  border-bottom: 1px solid #e6e6e6;
   height: 74px;
-  width: 100%; }
+  width: 100%;
+  background: #006496; }
   header.bottom {
     bottom: 0px;
     position: absolute; }
@@ -1806,9 +1817,20 @@ header {
     bottom: initial;
     position: fixed;
     top: 0; }
+  header.console {
+    color: #b0c4c6; }
+    header.console a {
+      color: #b0c4c6; }
   header .logo {
-    padding: 10px;
-    display: inline-block; }
+    padding: 10px 20px;
+    display: inline-block;
+    height: 50px; }
+    header .logo img {
+      height: 100%; }
+    header .logo .text {
+      padding: 20px;
+      position: relative;
+      top: -15px; }
   header .menu {
     float: right;
     list-style: none;
@@ -1819,7 +1841,6 @@ header {
       display: inline-block;
       padding: 0px 10px; }
       header .menu__item a {
-        color: inherit;
         text-decoration: none; }
 
 .section {
@@ -1834,7 +1855,8 @@ header {
     color: white; }
 
 .typed-wrapper {
-  padding-bottom: 100px; }
+  padding-top: 70px;
+  padding-bottom: 50px; }
 
 .typed-container {
   opacity: 0;
@@ -1854,6 +1876,10 @@ header {
 
 .typed-text, .console-text, .response-text {
   font-family: 'Inconsolata', sans-serif; }
+  .typed-text a, .console-text a, .response-text a {
+    font-family: 'Inconsolata', sans-serif;
+    color: inherit;
+    text-decoration: none; }
   .typed-text .name, .console-text .name, .response-text .name {
     color: #73e5e2; }
   .typed-text .host, .console-text .host, .response-text .host {

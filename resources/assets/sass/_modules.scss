@@ -1,4 +1,3 @@
-
 .splash {
 	background: #001E27;
 	color: #b0c4c6;
@@ -6,16 +5,25 @@
 	overflow: auto;
 }
 
-.full-bleed-background {
-
+.splash::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
 }
 
+.splash::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.splash::-webkit-scrollbar {
+	width: 12px;
+}
 
 header {
-	background: $navigation-color;
-	border-bottom: 1px solid $border-color;
 	height: 74px;
 	width: 100%;
+	background: rgba(00,100,150,1);
 
 	&.bottom {
 		bottom: 0px;
@@ -28,9 +36,28 @@ header {
 		top: 0;
 	}
 
+	&.console {
+		color: #b0c4c6;
+
+		a {
+			color: #b0c4c6;
+		}
+	}
+
 	.logo {
-		padding: 10px;
+		padding: 10px 20px;
 		display: inline-block;
+		height: 50px;
+
+		img {
+			height: 100%;
+		}
+
+		.text {
+			padding: 20px;
+			position: relative;
+			top: -15px;
+		}
 	}
 
 	.menu {
@@ -45,7 +72,6 @@ header {
 			padding: 0px 10px;
 
 			a {
-				color: inherit;
 				text-decoration: none;
 			}
 		}

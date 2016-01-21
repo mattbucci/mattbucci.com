@@ -1,6 +1,7 @@
-<header class="bottom">
+<header class="sticky console">
     <div class="logo">
-        <img src="http://placehold.it/250x50">
+        <img src="/assets/img/logo.png">
+        <span class="text">Matthew Bucci</span>
     </div>
 
     <ul class="menu">

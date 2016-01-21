@@ -21,8 +21,8 @@ function type_text(text_container, index, callback) {
     $typed_text.html("");
     $typed_text.typed({
         strings: [text],
-        typeSpeed: 20,
-        backDelay: 100,
+        typeSpeed: 5,
+        backDelay: 0,
         loop: false,
         loopCount: false,
         callback: function() {
@@ -38,7 +38,7 @@ function type_text(text_container, index, callback) {
                     $(".splash").prop("scrollHeight")
                 );
                 callback();
-            }, 2000);
+            }, 1000);
         }
     });
 }

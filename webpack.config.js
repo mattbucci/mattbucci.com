@@ -1,63 +1,97 @@
 var webpack = require('webpack');
 var path = require('path');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var BUILD_DIR = path.resolve(__dirname, 'dist');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
-  contentBase: BUILD_DIR,
-  devtool: "source-map",
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:3000', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
     APP_DIR + '/index.js',
   ],
   module : {
-    loaders : [
-      { 
-        test: /\.js?$/, 
-        loaders: ['react-hot'],
+    rules : [
+      {
+        test: /\.jsx?$/,
+        use: ['react-hot-loader/webpack'],
         include: APP_DIR,
       },
       {
         test: /\.scss$/,
-        loaders: ["style", "css", "sass"],
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader'
+        }, {
+          loader: 'sass-loader'
+        }],
         include: APP_DIR,
       },
       {
         test : /\.js?/,
         include : APP_DIR,
-        loader : 'babel'
+        use : [{
+          loader: 'babel-loader'
+        }]
       },
       {
         test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: 'file-loader?mimetype=image/svg+xml'
+        use: [{
+          loader: 'file-loader',
+
+          options: {
+            mimetype: 'image/svg+xml'
+          }
+        }]
       },
       {
         test: /\.woff(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: "file-loader?mimetype=application/font-woff"
+        use: [{
+          loader: 'file-loader',
+
+          options: {
+            mimetype: 'application/font-woff'
+          }
+        }]
       },
       {
         test: /\.woff2(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: "file-loader?mimetype=application/font-woff"
+        use: [{
+          loader: 'file-loader',
+
+          options: {
+            mimetype: 'application/font-woff'
+          }
+        }]
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: "file-loader?mimetype=application/octet-stream"
+        use: [{
+          loader: 'file-loader',
+
+          options: {
+            mimetype: 'application/octet-stream'
+          }
+        }]
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, 
-        loader: "file-loader"
+        use: [{
+          loader: 'file-loader'
+        }]
       },
     ]
   },
   output: {
+    path: BUILD_DIR,
     publicPath: '/assets/',
-    path: BUILD_DIR + "/assets/",
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new CopyWebpackPlugin([
+      'src/index.html',
+    ])
   ]
 };
 

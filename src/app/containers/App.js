@@ -1,11 +1,20 @@
 import { connect } from 'react-redux';
-import Loading from '../components/loading'
+import React from 'react';
+import NavBar from '../navbar';
+import Footer from '../footer';
+
 
 class App extends React.Component {
     render() {
-        return <h1> Hello World {Loading} </h1>;
+        return (
+            <div>
+                <NavBar></NavBar>
+                {/*<Footer></Footer>*/}
+            </div>
+        );
     }
 }
+
 const mapStateToProps = ({App}, ownProps) => {
     return {}
 }

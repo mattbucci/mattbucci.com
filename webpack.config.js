@@ -1,9 +1,12 @@
 var webpack = require('webpack');
 var path = require('path');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
+
 
 var BUILD_DIR = path.resolve(__dirname, 'dist');
 var APP_DIR = path.resolve(__dirname, 'src');
+var cssOutputFile = 'styles.css'
 
 var config = {
   entry: [
@@ -17,30 +20,28 @@ var config = {
         include: APP_DIR,
       },
       {
-        test: /\.scss$/,
+        test: /\.(js|jsx)$/,
         use: [{
-          loader: 'style-loader'
-        }, {
-          loader: 'css-loader'
-        }, {
-          loader: 'sass-loader'
-        }],
-        include: APP_DIR,
-      },
-      {
-        test : /\.js?/,
-        include : APP_DIR,
-        use : [{
           loader: 'babel-loader'
         }]
       },
       {
-        test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, 
+        test: /\.scss$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {loader: 'css-loader', options: {importLoaders: 1}},
+            'postcss-loader',
+            'sass-loader',
+          ],
+        })
+      },
+      {
+        test: /\.svg$/,
         use: [{
-          loader: 'file-loader',
-
+          loader: 'raw-loader',
           options: {
-            mimetype: 'image/svg+xml'
+            name: 'static/media/[name].[hash:8].[ext]'
           }
         }]
       },
@@ -83,12 +84,24 @@ var config = {
     ]
   },
   output: {
-    path: BUILD_DIR,
+    path: BUILD_DIR + "/assets/",
     publicPath: '/assets/',
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.DefinePlugin({
+    //   'process.env.NODE_ENV': JSON.stringify('production')
+    // }),
+    new ExtractTextPlugin(cssOutputFile),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compressor: {
+    //     screw_ie8: true,
+    //     warnings: false
+    //   },
+    //
+    //   sourceMap: false,
+    //   sourceMap: true
+    // }),
     new CopyWebpackPlugin([
       'src/index.html',
     ])

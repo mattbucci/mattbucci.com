@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i|Roboto:100,300,500,700);@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i|Roboto:100,300,500,700);html {
+  /* Adjust font size */
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* Font varient */
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  /* Smoothing */
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100; }
+
+.constrained, .navbar {
+  margin: auto;
+  max-width: 1100px;
+  width: 100%; }
+
+.navbar {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: #EFEFEF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 76px;
+  line-height: 76px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+  .navbar__item {
+    color: #60677F;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0 40px; }
+    .navbar__item--selected, .navbar__item:hover {
+      color: #7392FF; }
+html {
+  /* Adjust font size */
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  /* Font varient */
+  font-variant-ligatures: none;
+  -webkit-font-variant-ligatures: none;
+  /* Smoothing */
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px; }
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100; }
+
+.constrained {
+  margin: auto;
+  max-width: 1100px;
+  width: 100%; }

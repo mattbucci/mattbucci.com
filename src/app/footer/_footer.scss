@@ -1,1 +1,25 @@
 @import "../../styles/base";
+
+$footer-bg-color: $dark;
+
+.footer {
+  padding: 40px;
+  background: $footer-bg-color;
+
+  .navbar {
+    @extend .constrained;
+    display: flex;
+
+    &__item {
+      font-size: .6rem;
+      color: $text_gray;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0 40px;
+
+      &--selected, &:hover {
+        color: $highlight;
+      }
+    }
+  }
+}

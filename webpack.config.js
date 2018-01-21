@@ -80,7 +80,7 @@ var config = {
         use: [{
           loader: 'file-loader'
         }]
-      },
+      }
     ]
   },
   output: {
@@ -104,6 +104,7 @@ var config = {
     // }),
     new CopyWebpackPlugin([
       'src/index.html',
+      {'from': 'src/images'},
     ])
   ]
 };

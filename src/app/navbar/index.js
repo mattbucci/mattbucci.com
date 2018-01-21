@@ -1,5 +1,3 @@
-import './_navbar.scss'
-
 const Navbar = () => {
     var nav_items = [
         'blog',

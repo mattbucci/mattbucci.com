@@ -1,15 +1,22 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import NavBar from '../navbar';
+import Header from '../header';
 import Footer from '../footer';
+
+import Blog from './Blog';
+
+import './app.scss';
 
 
 class App extends React.Component {
     render() {
         return (
             <div>
-                <NavBar></NavBar>
-                {/*<Footer></Footer>*/}
+                <Header></Header>
+                <div className="main">
+                    <Blog></Blog>
+                </div>
+                <Footer></Footer>
             </div>
         );
     }

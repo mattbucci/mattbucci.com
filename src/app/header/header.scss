@@ -1,0 +1,46 @@
+@import "../../styles/base";
+
+.header {
+  @extend .constrained;
+  margin-top:20px;
+  text-align: center;
+
+  .logo {
+    img {
+      margin-top:.3rem;
+      margin-bottom: .3rem;
+      height: 2.6rem;
+      width: auto;
+    }
+
+    h3 {
+      color: #60677F;
+      font-size: 1.2rem;
+      padding: 2px;
+      margin: auto;
+    }
+  }
+
+  .navbar {
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $accent_gray;
+    display: inline-flex;
+    margin-top: .6rem;
+    height: 46px;
+    line-height: 46px;
+    text-align: center;
+
+    &__item {
+      color: $text_gray;
+      font-size: .8rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0 40px;
+
+      &--selected, &:hover {
+        color: $highlight;
+      }
+    }
+  }
+}

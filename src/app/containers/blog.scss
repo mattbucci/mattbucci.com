@@ -1,0 +1,43 @@
+@import "../../styles/base";
+
+.blog {
+  display: flex;
+
+  .content {
+    flex-basis: 75%;
+  }
+
+  .sidebar {
+    flex-basis: 25%;
+  }
+}
+
+
+.post__preview {
+  text-decoration: none;
+
+  &__image {
+
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 2rem;
+    line-height: 2rem;
+    margin-bottom: 0rem;
+    text-transform: none;
+    color: #f88f8f;
+  }
+
+  &__date {
+    margin: .5rem 0;
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.6rem;
+    text-transform: none;
+    color: $text_gray;
+  }
+}

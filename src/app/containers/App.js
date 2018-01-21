@@ -3,8 +3,6 @@ import React from 'react';
 import Header from '../header';
 import Footer from '../footer';
 
-import Blog from './Blog';
-
 import './app.scss';
 
 
@@ -14,7 +12,7 @@ class App extends React.Component {
             <div>
                 <Header></Header>
                 <div className="main">
-                    <Blog></Blog>
+                    {this.props.children}
                 </div>
                 <Footer></Footer>
             </div>

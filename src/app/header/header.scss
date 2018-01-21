@@ -7,15 +7,15 @@
 
   .logo {
     img {
-      margin-top:.3rem;
-      margin-bottom: .3rem;
-      height: 2.6rem;
+      margin-top: 1.75rem;
+      margin-bottom: .25rem;
+      height: 3rem;
       width: auto;
     }
 
     h3 {
       color: #60677F;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       padding: 2px;
       margin: auto;
     }
@@ -26,13 +26,14 @@
     border-bottom: 1px solid;
     border-color: $accent_gray;
     display: inline-flex;
-    margin-top: .6rem;
-    height: 46px;
-    line-height: 46px;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    height: 60px;
+    line-height: 60px;
     text-align: center;
 
     &__item {
-      color: $text_gray;
+      color: lighten($text_gray, 30%);
       font-size: .8rem;
       text-decoration: none;
       text-transform: uppercase;

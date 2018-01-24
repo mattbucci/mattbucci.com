@@ -1,7 +1,11 @@
 import { connect } from 'react-redux';
 import React from 'react';
+import { Route } from 'react-router'
+
 import Header from '../header';
 import Footer from '../footer';
+
+import Blog from './Blog';
 
 import './app.scss';
 
@@ -12,7 +16,7 @@ class App extends React.Component {
             <div>
                 <Header></Header>
                 <div className="main">
-                    {this.props.children}
+                    <Route path="blog" component={Blog}/>
                 </div>
                 <Footer></Footer>
             </div>

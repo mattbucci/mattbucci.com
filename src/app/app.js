@@ -4,14 +4,18 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
-import { Router, Route, hashHistory} from 'react-router'
-import { syncHistoryWithStore, routerReducer, routerMiddleware, push} from 'react-router-redux'
+
+import createHistory from 'history/createBrowserHistory';
+import { Route } from 'react-router'
+import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 
 import rootReducer from './reducers'
 import App from './containers/App';
-import Blog from './containers/Blog';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// Create a history of your choosing (we're using a browser history in this case)
+const history = createHistory();
 
 const store = createStore(
     combineReducers({
@@ -21,6 +25,7 @@ const store = createStore(
 
     composeEnhancers(
         applyMiddleware(
+            routerMiddleware(history),
             thunkMiddleware, // lets us dispatch() functions
             asyncDispatchMiddleware, // lets us dispatch from a reducer
         )
@@ -28,17 +33,12 @@ const store = createStore(
 );
 
 
-// Create an enhanced history that syncs navigation events with the store
-const history = syncHistoryWithStore(hashHistory, store)
-
 
 render(
     <Provider store={store}>
-        <Router history={history}>
-            <Route path="/" component={App}>
-                <Route path="blog" component={Blog}/>
-            </Route>
-        </Router>
+        <ConnectedRouter history={history}>
+            <Route path="/" component={App}></Route>
+        </ConnectedRouter>
     </Provider>,
     document.getElementById('app')
 )

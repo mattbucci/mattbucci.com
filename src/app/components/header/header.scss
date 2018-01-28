@@ -1,4 +1,4 @@
-@import "../../styles/base";
+@import "../../../styles/base";
 
 .header {
   @extend .constrained;
@@ -38,6 +38,10 @@
       text-decoration: none;
       text-transform: uppercase;
       padding: 0 40px;
+
+      &.active {
+        color: $highlight;
+      }
 
       &--selected, &:hover {
         color: $highlight;

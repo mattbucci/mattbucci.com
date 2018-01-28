@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "npm run development",
-    "development": "webpack-dev-server --open --content-base dist/",
+    "development": "webpack-dev-server --open --content-base dist/ --history-api-fallback",
     "prod": "npm run production",
     "production": "webpack"
   },
@@ -36,7 +36,7 @@
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
-    "react-svg-inline": "^2.0.1",
+    "react-svg-inline": "^2.1.0",
     "redux": "^3.5.2",
     "redux-persist": "^4.10.2",
     "redux-thunk": "^2.2.0",

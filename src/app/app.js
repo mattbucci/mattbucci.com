@@ -1,44 +1,44 @@
-import thunkMiddleware from 'redux-thunk';
-import asyncDispatchMiddleware from '../_helpers/asyncDispatch';
+import { connect } from 'react-redux';
 import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { compose, createStore, combineReducers, applyMiddleware } from 'redux';
-
-import createHistory from 'history/createBrowserHistory';
 import { Route } from 'react-router'
-import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 
-import rootReducer from './reducers'
-import App from './containers/App';
+import Header from './components/header';
+import Footer from './components/footer';
 
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+import Blog from './Blog';
+import Projects from './Projects';
+import About from './About';
 
-// Create a history of your choosing (we're using a browser history in this case)
-const history = createHistory();
-
-const store = createStore(
-    combineReducers({
-        rootReducer,
-        routing: routerReducer
-    }),
-
-    composeEnhancers(
-        applyMiddleware(
-            routerMiddleware(history),
-            thunkMiddleware, // lets us dispatch() functions
-            asyncDispatchMiddleware, // lets us dispatch from a reducer
-        )
-    ),
-);
+import './app.scss';
 
 
+class App extends React.Component {
+    render() {
+        return (
+            <div>
+                <Header currentPath={this.props.currentPath}></Header>
+                <div className="main">
+                    <Route exact path="/" component={Blog}/>
+                    <Route path="/projects" component={Projects}/>
+                    <Route path="/about" component={About}/>
+                </div>
+                <Footer></Footer>
+            </div>
+        );
+    }
+}
 
-render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <Route path="/" component={App}></Route>
-        </ConnectedRouter>
-    </Provider>,
-    document.getElementById('app')
-)
+const mapStateToProps = ({App}, ownProps) => {
+    return {
+        currentPath: ownProps.location.pathname,
+    }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+    return {}
+}
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(App)

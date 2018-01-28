@@ -1,17 +1,17 @@
-import Logo from './logo';
-import Contact from './contact';
-import Social from './social';
+import Logo from '../logo';
+import Contact from '../contact';
+import Social from '../social';
 import NavBar from '../navbar';
 
 import './header.scss';
 
-const Header = () => {
+const Header = ({currentPath}) => {
     return (
         <div className="header">
             <Logo></Logo>
             <Social></Social>
             <Contact></Contact>
-            <NavBar></NavBar>
+            <NavBar currentPath={currentPath}></NavBar>
         </div>
     );
 };

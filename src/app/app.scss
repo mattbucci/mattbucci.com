@@ -1,0 +1,6 @@
+@import "../styles/base";
+
+.main {
+  @extend .constrained;
+  min-height: 500px;
+}

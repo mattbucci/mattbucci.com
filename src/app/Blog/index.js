@@ -1,7 +1,7 @@
 import './blog.scss';
 
 const Blog = () => {
-    return ()
+    return <div></div>
 }
 
 /*

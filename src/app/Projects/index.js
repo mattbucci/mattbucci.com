@@ -1,4 +1,9 @@
 const Projects = () => {
+    return <div></div>;
+}
+
+/*
+const Projects = () => {
     return (
         <div className="blog">
             <div className="content">
@@ -19,5 +24,6 @@ const Projects = () => {
         </div>
     );
 };
+*/
 
 export default Projects;

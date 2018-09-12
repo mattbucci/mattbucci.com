@@ -1,6 +1,11 @@
 import './blog.scss';
 
 const Blog = () => {
+    return ()
+}
+
+/*
+const Blog = () => {
     return (
         <div className="blog">
             <div className="content">
@@ -21,5 +26,6 @@ const Blog = () => {
         </div>
     );
 };
+*/
 
 export default Blog;
